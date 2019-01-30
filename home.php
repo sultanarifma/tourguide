@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
   <head>
@@ -31,15 +30,12 @@
       <div class="container">
         <a class="navbar-brand" href="#">Togu - Tourguide</a>
       </div>
-
       <nav class="nav navbar-nav navbar-right">
           <p>
-              <a data-toggle="modal" data-target="#mydaftar" class="btn btn-primary" href="#">Sign Up</a>
-              <a data-toggle="modal" data-target="#mylogin" class="btn btn-primary" href="#">Sign In</a>
+            <a class="btn btn-primary" href="logout.php">Sign out</a>
         </p>
       </nav>
     </nav>
-
     
 
     <!-- Masthead -->
@@ -48,9 +44,10 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Buatlah rencana perjalanan wisata anda lebih muda dengan bantuan kami.</h1>
+            <h1 class="mb-5">Hai <?php session_start();
+              echo $_SESSION['username']; ?>, Buatlah rencana perjalanan wisata anda lebih muda dengan bantuan kami.</h1>
           </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <!-- <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
@@ -61,7 +58,7 @@
                 </div>
               </div>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
     </header>
@@ -233,81 +230,6 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    
-<!-- Modal daftar -->
-<div id="mydaftar" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Silahkan daftar akun Togu anda</h4>
-      </div>
-      <div class="modal-body">
-        <form action="daftar.php" method="POST" >
-            <div class="form-group">
-              <label for="exampleInputEmail1">Fullname</label>
-              <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Fullname">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Username</label>
-              <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="exampleInputPassword1" placeholder="Password">
-            </div>
-          
-            
-          
-              <input type="submit" class="btn btn-success" value="Daftar"></input>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          
-        </form>
-        </div>
-      </div>
-  </div>
-</div>
-<!-- end modal daftar -->
-
-<!-- Modal login -->
-<div id="mylogin" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Silahkan masuk akun Togu anda</h4>
-      </div>
-      <div class="modal-body">
-        <form action="login.php" method="POST">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Username</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-    </div>
-    <div class="modal-footer">
-      <input type="submit" class="btn btn-success" value="Login"></input>
-       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-     </div>
-  </form>
-      </div>
-      
-    </div>
-  </div>
-</div>
-<!-- End Modal Login -->
-
   </body>
 
 </html>
